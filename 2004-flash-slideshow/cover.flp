@@ -1,0 +1,31 @@
+﻿<flash_project name="cover" version="1">
+    <project_folder name="com" expanded="true">
+        <project_folder name="nuthinking" expanded="true">
+            <project_folder name="nuCover" expanded="true">
+                <project_folder name="elements" expanded="true">
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/elements/Banda_2.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/elements/Banda_1.as" filetype="as" />
+                </project_folder>
+                <project_folder name="fxs" expanded="false">
+                </project_folder>
+                <project_folder name="transitions" expanded="true">
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/Waterfall.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/Arches.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/BandsOne.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/Chess.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/Circles.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/CT_Composition.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/FF_Composition.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/Lines.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/Rainfall.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/Small2Big.as" filetype="as" />
+                    <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/transitions/TriBand.as" filetype="as" />
+                </project_folder>
+                <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/Cover_mask.as" filetype="as" />
+                <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/Cover_cgws.as" filetype="as" />
+                <project_file path="../../Flash/CGWS_Classes/com/nuthinking/nuCover/Cover_img.as" filetype="as" />
+            </project_folder>
+        </project_folder>
+    </project_folder>
+    <project_file path="./immagini.fla" filetype="fla" profile="" def_file="true" />
+</flash_project>

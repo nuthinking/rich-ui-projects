@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+
+<menu title="CGWS">
+	<button name="Biography">
+	</button>
+	<button name="Portfolio" descrizione="These are projects that I have completed, including both customer and freelance accounts">
+		<voce name= "Banca Profilo">
+			<link>http://www.bancaprofilo.it</link>
+			<img></img>
+			<date>12.2000</date>
+			<descrizione>Development of all Flash objects of the web site as well as demonstration presentation of its functions</descrizione>
+		</voce>
+		<voce name= "HTML.it">
+			<link>http://www.nuthinking.com/test/concorso.html</link>
+			<img></img>
+			<date>8.2001</date>
+			<descrizione>Animation in Flash with which I participated in a contest promoted by www.html.it</descrizione>
+		</voce>
+		<voce name= "e10dance">
+			<link>http://www.e10dance.com</link>
+			<img></img>
+			<date>11.2001</date>
+			<descrizione>Development of all Flash objects of the web site (intro, menu, screensaver)</descrizione>
+		</voce>
+		<voce name= "Filippo Bau">
+			<link>http://nuthinking.com/filippo</link>
+			<img></img>
+			<date>4.2002</date>
+			<descrizione>Entire development of the web site dedicated to my untrusty, but lovable, dog Filippo</descrizione>
+		</voce>
+		<voce name= "Kemen EA">
+			<link>http://ea.kemen.it</link>
+			<img></img>
+			<date>3.2003</date>
+			<descrizione>A project I made in Kemen including animation and games and the making-of</descrizione>
+		</voce>
+		<voce name= "CT">
+			<link>http://www.consultechnology.com</link>
+			<img></img>
+			<date>1.2004</date>
+			<descrizione>I fully programmed this strongly user-centered website for Consultechnology</descrizione>
+		</voce>
+		<voce name= "ByBit">
+			<link>http://www.bybit.it</link>
+			<img></img>
+			<date>3.2004</date>
+			<descrizione>Designing of the whole website, incuded the navigation and the graphic effects</descrizione>
+		</voce>
+	</button>
+	<button name="Projects" descrizione="These are projects on which I'm working, which have not yet been published but will be finished soon">
+		<voce name= "NuThinking">
+			<link>http://www.nuthinking.com</link>
+			<img></img>
+			<date>2.2001</date>
+			<descrizione>Entire development of the institute web site for my activity in New Media</descrizione>
+		</voce>
+		<voce name= "'R' Project">
+			<link>http://www.nuthinking.com/test/interface.htm</link>
+			<img></img>
+			<date>10.2001</date>
+			<descrizione>Full development of the personal web site for Paolo Lucchi, my dear friend and talented Sound Designer</descrizione>
+		</voce>
+		<voce name= "Radio Blanca">
+			<link>http://www.nuthinking.com/test/radio_blanca.htm</link>
+			<img></img>
+			<date>10.2001</date>
+			<descrizione>Development of the graphic interface for an on-line radio</descrizione>
+		</voce>
+		<voce name= "NUTH">
+			<link>http://www.nuthinking.com/beta</link>
+			<img></img>
+			<date>6.2003</date>
+			<descrizione>A navigation system ideated for various international contests</descrizione>
+		</voce>
+	</button>
+	<button name="Experiments" descrizione="These are experiments in which I use programming and the latest multimedia technologies, at times also to express various concepts">
+		<voce name= "The Place">
+			<link>http://www.nuthinking.com/multisensorial/theplace.html</link>
+			<img></img>
+			<date>6.2001</date>
+			<descrizione>A look at the future across the most important cities</descrizione>
+		</voce>
+		<voce name= "See Thinks">
+			<link>http://www.nuthinking.com/multisensorial/seethinks.html</link>
+			<img></img>
+			<date>6.2001</date>
+			<descrizione>Can we really understand what a person thinks? And what we need to do this?</descrizione>
+		</voce>
+		<voce name= "NuCinematic">
+			<link>http://www.nuthinking.com/multisensorial/nucinematic.html</link>
+			<img></img>
+			<date>7.2001</date>
+			<descrizione>Are we really able to make people do what we want?</descrizione>
+		</voce>
+		<voce name= "Kreative Souls">
+			<link>http://www.nuthinking.com/test/db/souls/</link>
+			<img></img>
+			<date>7.2002</date>
+			<descrizione>Join this creative community and tell what you think</descrizione>
+		</voce>
+		<voce name= "Art or Math?">
+			<link>http://www.nuthinking.com/multisensorial/art_or_math.htm</link>
+			<img></img>
+			<date>8.2002</date>
+			<descrizione>Can mathematic simulate the creativity in composing images?</descrizione>
+		</voce>
+		<voce name= "CGWS 3D v.1">
+			<link>http://www.nuthinking.com/test/3d_cgws.html</link>
+			<img></img>
+			<date>7.2002</date>
+			<descrizione>3D animated text through codes</descrizione>
+		</voce>
+		<voce name= "CGWS 3D v.2">
+			<link>http://www.nuthinking.com/test/3d_cgws_b.html</link>
+			<img></img>
+			<date>8.2002</date>
+			<descrizione>3D animated text through codes thanks to the engine of www.9elements.com</descrizione>
+		</voce>
+		<voce name= "Ibiza 2002">
+			<link>http://www.nuthinking.com/ibiza2002/</link>
+			<img></img>
+			<date>8.2002</date>
+			<descrizione>Album containing photos taken by me at the closing parties on Ibiza</descrizione>
+		</voce>
+		<voce name= "7 Deadly Sins">
+			<link>http://www.nuthinking.com/test/a.htm</link>
+			<img></img>
+			<date>5.2003</date>
+			<descrizione>My work for AniMOweb's contest. It is reffering the worlwide traffic of trees</descrizione>
+		</voce>
+		<voce name= "Green">
+			<link>http://www.nuthinking.com/test/green_b.htm</link>
+			<img></img>
+			<date>3.2003</date>
+			<descrizione>My work for AniMOweb's contest. It is reffering the worlwide traffic of trees</descrizione>
+		</voce>
+		<voce name= "Natal Album">
+			<link>http://www.nuthinking.com/natal</link>
+			<img></img>
+			<date>10.2003</date>
+			<descrizione>A killer picture-view application (navigation by keyboard, resizing, comments...)</descrizione>
+		</voce>
+	</button>
+</menu>

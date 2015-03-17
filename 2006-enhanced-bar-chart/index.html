@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>An accessible bar chart</title>
+
+<meta name="description" content="Accessible bar chart using HTML and CSS" />
+<meta name="keywords" content="bar chart, chart, graph, accessible, statistics, chart component, charting" />
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+	var MM_contentVersion = 6;
+	var plugin = (navigator.mimeTypes && navigator.mimeTypes["application/x-shockwave-flash"]) ? navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin : 0;
+	if ( plugin ) {
+			var words = navigator.plugins["Shockwave Flash"].description.split(" ");
+		    for (var i = 0; i < words.length; ++i)
+		    {
+			if (isNaN(parseInt(words[i])))
+			continue;
+			var MM_PluginVersion = words[i];
+		    }
+		var MM_FlashCanPlay = MM_PluginVersion >= MM_contentVersion;
+	}
+	else if (navigator.userAgent && navigator.userAgent.indexOf("MSIE")>=0
+	   && (navigator.appVersion.indexOf("Win") != -1)) {
+		document.write('<SCR' + 'IPT LANGUAGE=VBScript\> \n'); //FS hide this from IE4.5 Mac by splitting the tag
+		document.write('on error resume next \n');
+		document.write('MM_FlashCanPlay = ( IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash." & MM_contentVersion)))\n');
+		document.write('</SCR' + 'IPT\> \n');
+	}
+
+	var originalContent,enhancedContent;
+	/*
+	if the user has a screen reader and JavaSscript enable he could be able to deactivate the flash enhanched content always through JavaScript.
+	I will start with the assumption, that could be wrong, that if the browser can read the JavaScript there is no screen reader activated.
+	*/
+	var viewMode = "enhanced";
+	/*
+	Then I give the possibility to force the presence of accessible content (of course if javascript or flash is enabled).
+	*/
+	function swapView()
+	{
+		var obj = document.getElementById("chart");
+		if(viewMode == "enhanced"){
+			obj.innerHTML = originalContent;
+			document.getElementById("optionView").innerHTML = '<p><a href="#" onclick="javascript:swapView()" alt="click to swap to flash enhanced content">swap chart view</a></p>';
+			viewMode = "accessible";
+		}else{
+			obj.innerHTML = enhancedContent;
+			document.getElementById("optionView").innerHTML = '<p><a href="#" onclick="javascript:swapView()" alt="click to swap to accessible content">swap chart view</a></p>';
+			viewMode = "enhanced";
+		}
+
+	}
+
+	function initFlash()
+	{
+		// if there is no flash and we are not interested on make the user install it to see only a part of the page we leave the original content
+		if(!MM_FlashCanPlay) return;
+		// otherwise we can give the user the option on swapping it based on if he is interested on having accessible content, maybe because he is using a screen reader
+		document.getElementById("optionView").innerHTML = '<p><a href="#" onclick="javascript:swapView()" alt="click to swap to accessible content">swap chart view</a></p>';
+		// get the reference to the chart div
+		var obj = document.getElementById("chart");
+		// get the innerHTML that unfortunately is the html also in xhtml document and store it for the swapping
+		originalContent = obj.innerHTML;
+		// convert it in xhtml and escape it to be passed to flash through FlashVars
+		var stringXML = escape(convert2xhtml(originalContent));
+		// store the new content for the swapping
+		enhancedContent = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="420" height="278" id="chart" align="middle"><param name="allowScriptAccess" value="sameDomain" /><PARAM NAME=FlashVars VALUE="stringXML='+stringXML+'"><param name="movie" value="chart.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><embed src="chart.swf" FlashVars="stringXML='+stringXML+'" quality="high" bgcolor="#ffffff" width="420" height="278" name="chart" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object>';
+		// swap initially the content
+		obj.innerHTML = enhancedContent;
+	}
+	function convert2xhtml(str) {
+		var re,str,m;
+		re = new RegExp("<[a-z]+\\s[^>]+>","gi");
+		m = re.exec(str);
+		if(m != null){
+			while(m != null){
+				str = str.substring(0,m.index)+addAttributeQuotes(m[0])+str.substring(m.index+m[0].length,str.length);
+				m = re.exec(str);
+			}
+		}
+		re = new RegExp("<(br|img[^>]+)>","gi");
+		m = re.exec(str);
+		if (m != null) {
+			while(m != null){
+				if(str.charAt(m.index+m[1].length) != "/"){
+					str=str.substring(0,m.index+m[1].length+1)+" /"+str.substring(m.index+m[1].length+1,str.length);
+				}else if(str.charAt(m.index+m[1].length-1) != " "){
+					str=str.substring(0,m.index+m[1].length)+" "+str.substring(m.index+m[1].length,str.length);
+				}
+				m = re.exec(str);
+			}
+		}
+		return str;
+	}
+	function addAttributeQuotes(str){
+		var re = new RegExp("=[a-z0-9]+","gi");
+		m = re.exec(str);
+		if(m != null){
+			while(m != null){
+				str = str.substring(0,m.index+1)+"\""+m[0].substring(1,m[0].length)+"\""+str.substring(m.index+m[0].length,str.length);
+				m = re.exec(str);
+			}
+		}
+		return str;
+	}
+//--><!]]>
+</script>
+<style type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+td.value {
+	background-position: left top;
+	border-left: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+	padding:0;
+	border-bottom:1px solid #e5e5e5;
+}
+td {
+	padding: 4px 6px;
+	border-bottom:1px solid #e5e5e5;
+	border-left:1px solid #e5e5e5;
+	background-color:#fff;
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+}
+td.value img {
+	vertical-align: middle;
+	margin: 5px 5px 5px 0;
+}
+th {
+	text-align: left;
+	vertical-align:top;
+}
+td.last {
+	border-bottom:1px solid #e5e5e5;
+}
+td.first {
+	border-top:1px solid #e5e5e5;
+}
+table {
+	width: 33em;
+}
+caption {
+	font-size:90%;
+	font-style:italic;
+}
+/*]]>*/-->
+</style></head>
+
+<body>
+	<h1>An accessible bar chart</h1>
+	<p style="width: 33em; margin-bottom: 3em;">Below is an overview of banana imports for top importing countries. Source: Food and Agricultural Organization 1998.</p>
+	<div id="optionView"></div>
+	<div id="chart">
+	<table summary="Sweden was the top importing country by far in 1998." cellpadding="0" cellspacing="0">
+		<caption>Top banana importers 1998 (value of banana imports in millions of US dollars per million people)</caption>
+		<tbody>
+			<tr>
+				<th scope="col"><span>Country</span></th>
+				<th scope="col"><span>Millions of US dollars per million people</span> </th>
+			</tr>
+			<tr>
+				<td class="first">Sweden</td>
+				<td class="value first">
+					<img src="imgs/bar.png" alt="" height="16" width="200" />
+					<span>17.12</span>
+				</td>
+			</tr>
+			<tr>
+				<td>United Kingdom</td>
+				<td class="value">
+					<img src="imgs/bar.png" alt="" height="16" width="104" />
+					<span>8.88</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Germany</td>
+				<td class="value">
+					<img src="imgs/bar.png" alt="" height="16" width="98" />
+					<span>8.36</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Italy</td>
+				<td class="value">
+					<img src="imgs/bar.png" alt="" height="16" width="70" />
+					<span>5.96</span>
+				</td>
+			</tr>
+			<tr>
+				<td>United States </td>
+				<td class="value">
+					<img src="imgs/bar.png" alt="" height="16" width="56" />
+					<span>4.78</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Canada</td>
+				<td class="value">
+					<img src="imgs/bar.png" alt="" height="16" width="54" />
+					<span>4.62</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Japan</td>
+				<td class="value">
+					<img src="imgs/bar.png" alt="" height="16" width="50" />
+					<span>4.30</span>
+				</td>
+			</tr>
+			<tr>
+				<td>France</td>
+				<td class="value">
+					<img src="imgs/bar.png" alt="" height="16" width="39" />
+					<span>3.33</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Russia</td>
+				<td class="value last">
+					<img src="imgs/bar.png" alt="" height="16" width="12" />
+					<span>1.04</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript">initFlash();</script>
+</body></html>
